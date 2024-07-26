@@ -1,22 +1,64 @@
 export const nav: Navigation[] = [
   {
-    id: "0",
-    title: "Features",
-    path: "#features",
+    title: "Home",
+    path: "#home",
   },
   {
-    id: "1",
-    title: "Pricing",
-    path: "/#pricing",
+    title: "Upcoming",
+    path: "/#upcoming",
   },
   {
-    id: "2",
-    title: "Community",
-    path: "/#community",
+    title: "Get",
+    path: "/#get",
   },
   {
-    id: "3",
-    title: "Support",
-    path: "/#support",
+    title: "About Us",
+    path: "/#about-us",
+  },
+];
+
+export const about: Card[] = [
+  {
+    title: "Home",
+    paragraph:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos alias, dignissimos quod nesciunt consectetur ",
+  },
+  {
+    title: "Upcoming",
+    paragraph:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos alias, dignissimos quod nesciunt consectetur ",
+  },
+  {
+    title: "Get",
+    paragraph:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos alias, dignissimos quod nesciunt consectetur ",
+  },
+  {
+    title: "About Us",
+    paragraph:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos alias, dignissimos quod nesciunt consectetur ",
+  },
+];
+
+export const recommendations = [
+  {
+    img: "/forensics.webp",
+    link: "#",
+  },
+  {
+    img: "/git.webp",
+    link: "#",
+  },
+  {
+    img: "/what.webp",
+    link: "#",
+  },
+  {
+    img: "/linux.webp",
+    link: "#",
+  },
+  {
+    img: "/tools.webp",
+    link: "#",
   },
 ];

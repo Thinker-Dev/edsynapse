@@ -9,7 +9,11 @@ declare module "*.jpg" {
 }
 
 interface Navigation {
-  id: string;
   title: string;
   path: string;
+}
+
+interface Card {
+  paragraph: string;
+  title: string;
 }
