@@ -19,7 +19,7 @@ const CoursesCard = ({ title, subtitle }: Props) => {
           </span>
         )}
         <span
-          className={`${vonique.className} uppercase text-xl text-center w-[70%]`}
+          className={`${vonique.className} uppercase text- text-center w-[70%]`}
         >
           {subtitle}
         </span>
