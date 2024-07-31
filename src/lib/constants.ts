@@ -125,3 +125,148 @@ export const chapters = [
     img: "https://random.imagecdn.app/500/500?id=15",
   },
 ];
+
+export const courses = [
+  {
+    title: "CSD 1001",
+    subtitle: "PRINCIPLES OF DIGITAL FORENSICS",
+    path: "/course/csd1001/introduction",
+    chapters: [
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Introduction",
+        link: "/course/csd1001/introduction",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=15",
+        title: "Evidence Handling",
+        link: "/course/csd1001/evidence-handling",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Digital Forensics Tools",
+        link: "/course/csd1001/tools",
+      },
+    ],
+  },
+  {
+    title: "CSE 0002",
+    subtitle: "Linux Administration",
+    path: "/course/cse0002/basics",
+    chapters: [
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Basics of Linux",
+        link: "/course/cse0002/basics",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Shell Scripting",
+        link: "/course/cse0002/shell-scripting",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "System Administration",
+        link: "/course/cse0002/system-administration",
+      },
+    ],
+  },
+  {
+    title: "HUM 2003",
+    subtitle: "PRIVACY AND SECURITY",
+    path: "/course/hum2003/introduction",
+    chapters: [
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Introduction to Privacy",
+        link: "/course/hum2003/introduction",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Data Security",
+        link: "/course/hum2003/data-security",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Ethical Issues",
+        link: "/course/hum2003/ethical-issues",
+      },
+    ],
+  },
+  {
+    title: "MAT 2009",
+    subtitle: "Linux Administration",
+    path: "/course/mat2009/advanced",
+    chapters: [
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Advanced Linux",
+        link: "/course/mat2009/advanced",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Network Configuration",
+        link: "/course/mat2009/network-configuration",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Security Measures",
+        link: "/course/mat2009/security-measures",
+      },
+    ],
+  },
+  {
+    title: "CSD 3005",
+    subtitle: "DATA PRIVACY",
+    path: "/course/csd3005/introduction",
+    chapters: [
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Introduction to Data Privacy",
+        link: "/course/csd3005/introduction",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Data Protection Laws",
+        link: "/course/csd3005/laws",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Privacy Enhancing Technologies",
+        link: "/course/csd3005/technologies",
+      },
+    ],
+  },
+  {
+    title: "CSD 3010",
+    subtitle: "CYBER PHYSICAL SYSTEM",
+    path: "/course/csd3010/basics",
+    chapters: [
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Basics of Cyber Physical Systems",
+        link: "/course/csd3010/basics",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "System Integration",
+        link: "/course/csd3010/integration",
+      },
+      {
+        img: "https://random.imagecdn.app/500/500?id=13",
+        title: "Security in Cyber Physical Systems",
+        link: "/course/csd3010/security",
+      },
+    ],
+  },
+  {
+    subtitle: "COMING SOON",
+    path: "#",
+    chapters: [],
+  },
+  {
+    subtitle: "COMING SOON",
+    path: "#",
+    chapters: [],
+  },
+];

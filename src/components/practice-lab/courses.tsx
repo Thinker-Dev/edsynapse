@@ -1,6 +1,7 @@
 import { vonique } from "@/app/fonts";
 import React from "react";
 import CoursesCard from "../common/courses-card";
+import { courses } from "@/lib/constants";
 
 const Courses = () => {
   return (
@@ -8,18 +9,15 @@ const Courses = () => {
       <span className={`${vonique.className} uppercase text-xl `}>
         Available Courses
       </span>
-      <div className="grid grid-cols-4 gap-10 px-10">
-        <CoursesCard
-          title="CSD 1001"
-          subtitle="PRINCIPLES OF DIGITAL FORENSICS"
-        />
-        <CoursesCard title="CSE 0002" subtitle="Linux Administration" />
-        <CoursesCard title="HUM 2003" subtitle="pRIVACY AND SECURITY" />
-        <CoursesCard title="MAT 2009" subtitle="Linux Administration" />
-        <CoursesCard title="CSD 3005" subtitle="dATA PRIVACY" />
-        <CoursesCard title="CSD 3010" subtitle="CYBER PHYSICAL SYSTEM" />
-        <CoursesCard subtitle="COMING SOON" />
-        <CoursesCard subtitle="COMING SOON" />
+      <div className="grid grid-cols-4 gap-10">
+        {courses.map((item, index) => (
+          <CoursesCard
+            title={item.title}
+            subtitle={item.subtitle}
+            path={item.path}
+            key={index}
+          />
+        ))}
       </div>
     </section>
   );

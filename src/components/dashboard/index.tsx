@@ -7,25 +7,25 @@ import { usePathname } from "next/navigation";
 import React from "react";
 
 const Dashboard = ({ ...props }: React.HTMLAttributes<HTMLDivElement>) => {
-  return <div {...props} />;
+  return <div {...props} className="flex" />;
 };
 
 const Content = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) => (
-  <main
-    className={cn("flex mx-auto max-w-screen-xl bg-red", className)}
-    {...props}
-  />
+  <main className={cn("flex mx-auto max-w-screen-xl", className)} {...props} />
 );
 
 const Left = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-  <aside className={cn("w-[400px]", className)} {...props} />
+  <aside className={cn(" w-[300px] mt-[60px]", className)} {...props} />
 );
 
 const Center = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-  <section className={cn("p-10 ", className)} {...props} />
+  <section
+    className={cn("px-8 pt-8 mt-[60px] w-[90%]", className)}
+    {...props}
+  />
 );
 const Right = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
   <section
@@ -34,34 +34,33 @@ const Right = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
   />
 );
 
-const SideBar = ({ data }: { data: MenuTypes[] }) => {
+const SideBar = ({ course }: { course: Course | undefined }) => {
   const pathname = usePathname();
   return (
-    <aside className="absolute left-0 top-0 flex h-screen flex-col overflow-y-hidden  lg:static lg:translate-x-0 bg-gradient-to-b from-[#0E0F2E] to-[#01021D] p-8">
-      {data.map((menuItem, index) => (
-        <div key={index}>
-          <h3
-            className={`mb-4 font-medium  dark:text-white text-black text-2xl ${vonique.className}`}
+    <aside className="absolute left-0 top-0 flex  flex-col overflow-y-hidden  lg:static lg:translate-x-0 bg-gradient-to-b h-full from-[#0E0F2E] to-[#01021D] p-8">
+      <h3
+        className={`mb-4 font-medium  dark:text-white text-black text-2xl ${vonique.className}`}
+      >
+        {course?.title}
+      </h3>
+      <ul className="mb-7 flex flex-col space-y-5">
+        {course?.chapters.map((item, index) => (
+          <Link
+            href={`${item.link}`}
+            key={index}
+            className={` text-paragraph-light  flex items-center justify-between ${
+              (pathname === `${item.link}` ||
+                pathname.includes(`${item.link}`)) &&
+              "dark:text-white text-black"
+            }`}
           >
-            {menuItem.tab}
-          </h3>
-          <ul className="mb-7 flex flex-col space-y-5">
-            {menuItem.submenu?.map((submenuItem, index) => (
-              <Link
-                href={`${submenuItem.path}`}
-                key={index}
-                className={`dark:text-paragraph-dark text-paragraph-light hover:dark:text-white hover:text-black ${
-                  (pathname === `${submenuItem.path}` ||
-                    pathname.includes(`${submenuItem.path}`)) &&
-                  "dark:text-white text-black"
-                }`}
-              >
-                {submenuItem.title}
-              </Link>
-            ))}
-          </ul>
-        </div>
-      ))}
+            <span>{item.title}</span>
+            {pathname.includes(`${item.link}`) && (
+              <div className="bg-white rounded-full  h-1 w-1" />
+            )}
+          </Link>
+        ))}
+      </ul>
     </aside>
   );
 };
