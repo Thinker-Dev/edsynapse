@@ -16,7 +16,7 @@ const Page = () => {
       <Left>
         <SideBar course={course} />
       </Left>
-      <Center>
+      <Center className="h-[calc(100vh-60px)]">
         <Video course={course} />
       </Center>
     </Dashboard>

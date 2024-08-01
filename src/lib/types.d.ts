@@ -43,5 +43,11 @@ interface Course {
   title?: string;
   subtitle: string;
   path: string;
-  chapters: { title: string; img: string; link: string }[];
+  chapters: {
+    id: number;
+    title: string;
+    img: string;
+    link: string;
+    video_id: string;
+  }[];
 }

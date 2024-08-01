@@ -12,16 +12,20 @@ const Video = ({ course }: Props) => {
   );
 
   return (
-    <section className="space-y-4 w-full">
+    <section className="space-y-4 w-full h-[calc(100%-60px)]">
       <div>
         <span className="text-xl">
-          Chapter 1: <span className="font-medium">{chapter?.title}</span>
+          Chapter {chapter?.id}:{" "}
+          <span className="font-medium">{chapter?.title}</span>
         </span>
       </div>
-      <video controls>
-        <source src="/video.mp4" type="video/mp4" className="w-full" />
-        Seu navegador não suporta o elemento de vídeo.
-      </video>
+      <iframe
+        src={`https://www.youtube.com/embed/${chapter?.video_id}`}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full h-full"
+      ></iframe>
     </section>
   );
 };

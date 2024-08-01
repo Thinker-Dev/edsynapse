@@ -133,18 +133,26 @@ export const courses = [
     path: "/course/csd1001/introduction",
     chapters: [
       {
+        id: 1,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Introduction",
+        video_id: "watch?v=x_x5LkW6IXs&list=PL_c9BZzLwBRKFRIBWEWYCnV4Lk9HE3eYJ",
         link: "/course/csd1001/introduction",
       },
       {
+        id: 2,
         img: "https://random.imagecdn.app/500/500?id=15",
         title: "Evidence Handling",
+        video_id:
+          "watch?v=OhUKr1Acm40&list=PL_c9BZzLwBRKFRIBWEWYCnV4Lk9HE3eYJ&index=2",
         link: "/course/csd1001/evidence-handling",
       },
       {
+        id: 3,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Digital Forensics Tools",
+        video_id:
+          "watch?v=qp6e0tucEhw&list=PL_c9BZzLwBRKFRIBWEWYCnV4Lk9HE3eYJ&index=3",
         link: "/course/csd1001/tools",
       },
     ],
@@ -155,18 +163,24 @@ export const courses = [
     path: "/course/cse0002/basics",
     chapters: [
       {
+        id: 1,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Basics of Linux",
+        video_id: "",
         link: "/course/cse0002/basics",
       },
       {
+        id: 2,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Shell Scripting",
+        video_id: "",
         link: "/course/cse0002/shell-scripting",
       },
       {
+        id: 3,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "System Administration",
+        video_id: "",
         link: "/course/cse0002/system-administration",
       },
     ],
@@ -177,18 +191,24 @@ export const courses = [
     path: "/course/hum2003/introduction",
     chapters: [
       {
+        id: 1,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Introduction to Privacy",
+        video_id: "",
         link: "/course/hum2003/introduction",
       },
       {
+        id: 2,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Data Security",
+        video_id: "",
         link: "/course/hum2003/data-security",
       },
       {
+        id: 3,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Ethical Issues",
+        video_id: "",
         link: "/course/hum2003/ethical-issues",
       },
     ],
@@ -199,18 +219,24 @@ export const courses = [
     path: "/course/mat2009/advanced",
     chapters: [
       {
+        id: 1,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Advanced Linux",
+        video_id: "",
         link: "/course/mat2009/advanced",
       },
       {
+        id: 2,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Network Configuration",
+        video_id: "",
         link: "/course/mat2009/network-configuration",
       },
       {
+        id: 3,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Security Measures",
+        video_id: "",
         link: "/course/mat2009/security-measures",
       },
     ],
@@ -221,18 +247,24 @@ export const courses = [
     path: "/course/csd3005/introduction",
     chapters: [
       {
+        id: 1,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Introduction to Data Privacy",
+        video_id: "",
         link: "/course/csd3005/introduction",
       },
       {
+        id: 2,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Data Protection Laws",
+        video_id: "",
         link: "/course/csd3005/laws",
       },
       {
+        id: 3,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Privacy Enhancing Technologies",
+        video_id: "",
         link: "/course/csd3005/technologies",
       },
     ],
@@ -243,18 +275,24 @@ export const courses = [
     path: "/course/csd3010/basics",
     chapters: [
       {
+        id: 1,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Basics of Cyber Physical Systems",
+        video_id: "",
         link: "/course/csd3010/basics",
       },
       {
+        id: 2,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "System Integration",
+        video_id: "",
         link: "/course/csd3010/integration",
       },
       {
+        id: 3,
         img: "https://random.imagecdn.app/500/500?id=13",
         title: "Security in Cyber Physical Systems",
+        video_id: "",
         link: "/course/csd3010/security",
       },
     ],
