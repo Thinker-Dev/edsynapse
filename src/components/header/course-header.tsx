@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { vonique } from "@/app/fonts";
+import Link from "next/link";
 
 const CourseHeader = () => {
   const router = useRouter();
@@ -27,14 +28,12 @@ const CourseHeader = () => {
         }
       >
         <div className="flex items-center space-x-2">
-          <Button
-            variant={"ghost"}
-            className="space-x-4"
-            onClick={() => router.back()}
-          >
-            <ArrowLeft />
-            <span>Go Back</span>
-          </Button>
+          <Link href={"/learning-module"}>
+            <Button variant={"ghost"} className="space-x-4">
+              <ArrowLeft />
+              <span>Go Back</span>
+            </Button>
+          </Link>
         </div>
         <div className="flex items-center space-x-5">
           <div className="bg-[#121212] rounded-full px-4 py-2 flex space-x-3 items-center">

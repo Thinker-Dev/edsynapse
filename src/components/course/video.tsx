@@ -1,4 +1,4 @@
-import { usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import React from "react";
 
 interface Props {
@@ -6,21 +6,20 @@ interface Props {
 }
 
 const Video = ({ course }: Props) => {
-  const pathname = usePathname();
-  const chapter = course?.chapters.find((item) =>
-    item.link?.includes(pathname)
-  );
+  const searchParams = useSearchParams();
+  const params = searchParams.get("v") ?? "";
+  const chapter = course?.chapters.find((item) => item.id?.includes(params));
 
   return (
     <section className="space-y-4 w-full h-[calc(100%-60px)]">
       <div>
         <span className="text-xl">
-          Chapter {chapter?.id}:{" "}
+          Chapter {chapter?.chapter_id}:{" "}
           <span className="font-medium">{chapter?.title}</span>
         </span>
       </div>
       <iframe
-        src={`https://www.youtube.com/embed/${chapter?.video_id}`}
+        src={`https://www.youtube.com/embed/${chapter?.id}`}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen

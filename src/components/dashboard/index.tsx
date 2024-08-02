@@ -3,7 +3,7 @@
 import { vonique } from "@/app/fonts";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import React from "react";
 
 const Dashboard = ({ ...props }: React.HTMLAttributes<HTMLDivElement>) => {
@@ -35,7 +35,8 @@ const Right = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 );
 
 const SideBar = ({ course }: { course: Course | undefined }) => {
-  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const params = searchParams.get("v") ?? "";
   return (
     <aside className="absolute left-0 top-0 flex  flex-col overflow-y-hidden  lg:static lg:translate-x-0 bg-gradient-to-b h-full from-[#0E0F2E] to-[#01021D] p-8">
       <h3
@@ -43,20 +44,16 @@ const SideBar = ({ course }: { course: Course | undefined }) => {
       >
         {course?.title}
       </h3>
-      <ul className="mb-7 flex flex-col space-y-5">
+      <ul className="mb-7 flex flex-col space-y-5 ">
         {course?.chapters.map((item, index) => (
           <Link
-            href={`${item.link}`}
+            href={`${course?.path}?v=${item.id}`}
             key={index}
-            className={` text-paragraph-light  flex items-center justify-between ${
-              (pathname === `${item.link}` ||
-                pathname.includes(`${item.link}`)) &&
-              "dark:text-white text-black"
-            }`}
+            className={`text-paragraph-light flex items-center justify-between`}
           >
-            <span>{item.title}</span>
-            {pathname.includes(`${item.link}`) && (
-              <div className="bg-white rounded-full  h-1 w-1" />
+            <span className="truncate w-[190px]">{item.title}</span>
+            {params.includes(`${item.id}`) && (
+              <div className="bg-white rounded-full ml-4  h-1 w-1" />
             )}
           </Link>
         ))}

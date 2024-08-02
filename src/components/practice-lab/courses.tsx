@@ -16,6 +16,7 @@ const Courses = () => {
             subtitle={item.subtitle}
             path={item.path}
             key={index}
+            video_id={item.chapters}
           />
         ))}
       </div>

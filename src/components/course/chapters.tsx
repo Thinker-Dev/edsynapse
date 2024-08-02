@@ -15,7 +15,7 @@ const Chapters = ({ course }: Props) => {
       </span>
       <div className="grid grid-cols-3 gap-10">
         {course?.chapters.map((item, index) => (
-          <ChaptersCard title={item.title} img={item.img} key={index} />
+          <ChaptersCard title={item.title} key={index} />
         ))}
       </div>
     </div>
