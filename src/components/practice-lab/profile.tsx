@@ -1,7 +1,11 @@
+import { User } from "@/_actions/user/user";
 import { vonique } from "@/app/fonts";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Profile = () => {
+  const [user, setUser] = useState<User | null>(null)
+  const newUser = sessionStorage.getItem('user') ? JSON.parse(sessionStorage.getItem('user') as string) : ""
+
   return (
     <section className="relative">
       <svg
@@ -65,7 +69,7 @@ const Profile = () => {
       <span
         className={`${vonique.className} uppercase text-3xl absolute top-[122px] left-[309px] `}
       >
-        Username
+        {newUser ? newUser.username : ''}
       </span>
       <svg
         width="258"

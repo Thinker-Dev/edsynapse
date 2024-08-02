@@ -1,5 +1,4 @@
 import { vonique } from "@/app/fonts";
-import { recommendations } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,8 +8,10 @@ import Complete from "../icons/complete";
 import Learn from "../icons/learn";
 import Fire from "../icons/fire";
 import Video from "../icons/video";
+import { useGetRecommendations } from "@/hooks/recommendations/useGetRecommendations";
 
 const VideosTab = () => {
+  const { recommendations } = useGetRecommendations();
   return (
     <section>
       <div className="space-y-2">
@@ -19,9 +20,17 @@ const VideosTab = () => {
         </span>
         <div className="space-x-2 flex w-full">
           {recommendations.map((item, index) => (
-            <Link href={item.link} key={index} className="">
-              <Image src={item.img} alt="videos" width={1000} height={1000} />
+            // 
+            //   <Image src={item.img} alt="videos" width={1000} height={1000} />
+            // </Link>
+            <Link href={`/course?c=${item.topic.course_id}&t=${item.topic_id}&v=${item.id}`} key={index}>
+
+              <div className="thumbnail-container">
+                <img src={`https://img.youtube.com/vi/${item.url}/hqdefault.jpg`} alt={item.name} width="250" height="250" />
+              </div>
+
             </Link>
+
           ))}
         </div>
       </div>

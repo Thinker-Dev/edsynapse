@@ -1,7 +1,9 @@
 "use client";
 
+import { ICourse } from "@/_actions/course/course";
 import { vonique } from "@/app/fonts";
 import { cn } from "@/lib/utils";
+import { Item } from "@radix-ui/react-dropdown-menu";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import React from "react";
@@ -34,28 +36,41 @@ const Right = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
   />
 );
 
-const SideBar = ({ course }: { course: Course | undefined }) => {
+const SideBar = ({ course }: { course: ICourse | null | undefined }) => {
   const searchParams = useSearchParams();
-  const params = searchParams.get("v") ?? "";
+  const params = searchParams.get("t") ?? "";
+  const video = searchParams.get("v") ?? "";
   return (
     <aside className="absolute left-0 top-0 flex  flex-col overflow-y-hidden  lg:static lg:translate-x-0 bg-gradient-to-b h-full from-[#0E0F2E] to-[#01021D] p-8">
       <h3
         className={`mb-4 font-medium  dark:text-white text-black text-2xl ${vonique.className}`}
       >
-        {course?.title}
+        {course?.name}
       </h3>
       <ul className="mb-7 flex flex-col space-y-5 ">
-        {course?.chapters.map((item, index) => (
-          <Link
-            href={`${course?.path}?v=${item.id}`}
-            key={index}
-            className={`text-paragraph-light flex items-center justify-between`}
-          >
-            <span className="truncate w-[190px]">{item.title}</span>
-            {params.includes(`${item.id}`) && (
-              <div className="bg-white rounded-full ml-4  h-1 w-1" />
-            )}
-          </Link>
+        {course?.topics?.map((item, index) => (
+          <React.Fragment key={item.id}>
+            <Link
+              href={`/course?c=${course?.id}&t=${item.id}&v=${item.contents[0]?.id}`}
+              key={index}
+              className={`text-paragraph-light flex items-center justify-between`}
+            >
+              <span className="truncate w-[190px]">{item.name}</span>
+              {params.includes(`${item.id}`) && (
+                <div className="bg-white rounded-full ml-4  h-1 w-1" />)}
+            </Link>
+            {item?.contents?.map((content, index) => (
+              <Link
+                href={`/course?c=${course?.id}&t=${item.id}&v=${content.id}`}
+                key={index}
+              >
+                <span className="flex text-xs text-paragraph-light " >{content.name}</span>
+              </Link>
+
+            ))}
+          </React.Fragment>
+
+
         ))}
       </ul>
     </aside>
